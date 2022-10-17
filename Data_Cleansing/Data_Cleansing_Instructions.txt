@@ -1,0 +1,5 @@
+Using the tool of your choice please conduct a data profiling and cleansing of the linked Housing dataset. 
+
+Please be prepared to discuss how you would deal with missing values in the data and what insights you have gained from the dataset. If you are able to, please be prepared to discuss what models you would implement to predict MedHouseVal.
+
+Thank you. 
