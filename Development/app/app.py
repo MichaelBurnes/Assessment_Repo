@@ -53,6 +53,20 @@ def test_model():
     else:
         # GET request, just render the page
         return render_template('test_model.html', output=None)
+@app.route('/test_model', methods=['GET', 'POST'])
+def test_model():
+    if request.method == 'POST':
+        input_data = request.form.get('input_data')
+        # Process the input_data as required by your model
+        # For demonstration, let's assume the model's predict function is called like this:
+        # prediction = model.predict([[processed_input_data]])
+        # For now, we'll just return the input data as the "prediction"
+        output = input_data  # Replace this with actual model prediction logic
+        return render_template('test_model.html', output=output)
+    else:
+        # No output to display yet
+        return render_template('test_model.html', output=None)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Test the Model</h2>
+    <p>Enter your data below to get a prediction from the model.</p>
+    
+    <!-- Form for input data -->
+    <form action="/test_model" method="post">
+        <div class="form-group">
+            <label for="inputData">Input Data</label>
+            <!-- Adjust the type and name attributes based on your model's input -->
+            <input type="text" class="form-control" id="inputData" name="input_data" placeholder="Enter input data here">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <!-- Display the output/prediction -->
+    {% if output is not none %}
+    <div class="mt-4">
+        <h4>Prediction Result:</h4>
+        <p>{{ output }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
